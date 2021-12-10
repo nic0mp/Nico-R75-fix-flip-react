@@ -1,17 +1,29 @@
 import React, { Component } from "react";
 import './Login.css';
 
-class Login extends Component {
+class Register extends Component {
     state = {
         email: '',
         password: '',
+        displayName: '',
         fireErrors: ''
+    }
+
+    handleChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
     render () {
         return (
             <>
                 <form action="">
+                    <input type="text"
+                        className="regField"
+                        placeholder="Your Name"
+                        name="name" />
+
                     <input type="text"
                         className="regField"
                         placeholder="Email"
@@ -22,11 +34,11 @@ class Login extends Component {
                         placeholder="Password"
                         name="password" />
 
-                    <input type="submit" className="submitBtn" value="ENTER"/>
+                    <input type="submit" className="submitBtn" value="REGISTER"/>
                 </form>
             </>
         );
     }
 }
 
-export default Login;
+export default Register;
